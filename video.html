@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="林熙影院,林熙导航网,林熙网址收录,在线工具，林熙资源网，林熙blog"/>
+    <meta name="description" content="林熙导航网，免费收录实用网址大全！"/>
+    <title>⎛⎝ 林熙影院 ⎠⎞丨全网最新电影推荐在线观看！</title>
+    <link href="/favicon.ico" rel="icon">
+    <body oncontextmenu=self.event.returnValue=false>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+@font-face {
+    font-family: 'MyCustomFont';
+    src:url('/kl.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'MyCustomFont', sans-serif;
+}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 拟态核心背景 */
+        body {
+            background: #2d3139;
+            color: #aeb6c2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        /* 导航菜单样式 - 拟态设计 */
+        .navbar {
+            background: #2d3139;
+            padding: 0 20px;
+            position: relative;
+            z-index: 100;
+            box-shadow: 
+                8px 8px 16px #1f2228,
+                -8px -8px 16px #3b4049;
+        }
+        
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            color: #aeb6c2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: #4299e1;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #aeb6c2;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #4299e1;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4299e1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: #4299e1;
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* 汉堡菜单按钮 - 核心修改：默认隐藏（电脑端不显示） */
+        .menu-toggle {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #aeb6c2;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: none; /* 电脑端默认隐藏 */
+            align-items: center;
+            justify-content: center;
+            background: #2d3139;
+            box-shadow: 
+                4px 4px 8px #1f2228,
+                -4px -4px 8px #3b4049;
+            margin-left: auto;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 20px;
+            width: 100%;
+        }
+        
+        /* 视频播放器容器样式 - 拟态 */
+        .video-container {
+            background: #2d3139;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 
+                8px 8px 16px #1f2228,
+                -8px -8px 16px #3b4049;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 比例 */
+            border-radius: 12px;
+            overflow: hidden;
+            background: #2d3139;
+            box-shadow: 
+                inset 4px 4px 8px #1f2228,
+                inset -4px -4px 8px #3b4049;
+        }
+        
+        #videoPlayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+        
+        /* 视频简介区域样式 - 拟态 */
+        .video-description {
+            background: #2d3139;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            box-shadow: 
+                inset 3px 3px 6px #1f2228,
+                inset -3px -3px 6px #3b4049;
+            transition: all 0.3s ease;
+        }
+        
+        .video-description h3 {
+            color: #4299e1;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .video-description p {
+            color: #aeb6c2;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        /* 视频链接按钮区域 - 四个按钮一行 */
+        .video-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        /* 视频链接按钮样式 - 拟态 */
+        .video-btn {
+            background: #2d3139;
+            border-radius: 12px;
+            color: #aeb6c2;
+            padding: 12px 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            box-shadow: 
+                6px 6px 12px #1f2228,
+                -6px -6px 12px #3b4049;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .video-btn:hover {
+            box-shadow: 
+                4px 4px 8px #1f2228,
+                -4px -4px 8px #3b4049;
+            transform: translateY(-2px);
+            color: #4299e1;
+        }
+        
+        .video-btn.active {
+            box-shadow: 
+                inset 4px 4px 8px #1f2228,
+                inset -4px -4px 8px #3b4049;
+            color: #4299e1;
+        }
+        
+        /* 网址分类说明 - 拟态卡片 */
+        .url-category-info {
+            background: #2d3139;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            box-shadow: 
+                6px 6px 12px #1f2228,
+                -6px -6px 12px #3b4049;
+            width: 100%;
+        }
+        
+        .url-category-info h2 {
+            color: #aeb6c2;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        
+        .url-category-info p {
+            color: #8b95a3;
+            margin-bottom: 0;
+        }
+        
+        /* 网址按钮区域 - 固定四个按钮布局 */
+        .url-buttons {
+            margin: 10px auto 15px;
+            padding: 15px 20px;
+            max-width: 100%;
+            width: 100%;
+            background: #2d3139;
+            border-radius: 12px;
+            box-shadow: 
+                6px 6px 12px #1f2228,
+                -6px -6px 12px #3b4049;
+        }
+        
+        .url-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 网页端固定4列 */
+            gap: 15px;
+            width: 100%;
+        }
+        
+        /* 拟态按钮 */
+        .url-button {
+            display: inline-block;
+            background: #2d3139;
+            border-radius: 12px;
+            color: #aeb6c2;
+            padding: 12px 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: 
+                6px 6px 12px #1f2228,
+                -6px -6px 12px #3b4049;
+            transition: all 0.3s ease;
+            width: 100%;
+            border: none;
+        }
+        
+        .url-button:hover {
+            box-shadow: 
+                4px 4px 8px #1f2228,
+                -4px -4px 8px #3b4049;
+            transform: translateY(-2px);
+            color: #4299e1;
+        }
+        
+        /* 返回顶部按钮 - 拟态 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2d3139;
+            color: #4299e1;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 
+                6px 6px 12px #1f2228,
+                -6px -6px 12px #3b4049;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            border: none;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top.hide {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+        
+        .back-to-top:hover {
+            box-shadow: 
+                4px 4px 8px #1f2228,
+                -4px -4px 8px #3b4049;
+            color: #63b3ed;
+            transform: translateY(-3px);
+        }
+        
+        /* 底部版权信息 - 拟态 */
+        footer {
+            background: #2d3139;
+            margin-top: auto;
+            padding: 20px 0;
+            box-shadow: 
+                0 -4px 12px #1f2228,
+                0 4px 12px #3b4049;
+        }
+        
+        .copyright {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            color: #8b95a3;
+            font-size: 0.9rem;
+        }
+        
+        .copyright p {
+            margin: 5px 0;
+        }
+        
+        .copyright a {
+            color: #4299e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .copyright a:hover {
+            color: #63b3ed;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 1200px) {
+            .container, .nav-container, .copyright {
+                max-width: 1000px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* 移动端导航菜单 */
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #2d3139;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                padding: 20px 0;
+                box-shadow: 
+                    0 8px 16px #1f2228,
+                    0 -8px 16px #3b4049;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            /* 核心修改：移动端显示汉堡按钮 */
+            .menu-toggle {
+                display: flex;
+            }
+            
+            /* 移动端按钮布局 - 每行两个 */
+            .video-buttons, .url-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            body {
+                padding: 0;
+            }
+            
+            /* 移动端版权信息 */
+            .copyright {
+                font-size: 0.85rem;
+                padding: 0 15px;
+            }
+            
+            .container, .nav-container, .copyright {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+            
+            /* 移动端视频容器 */
+            .video-container {
+                padding: 15px;
+                margin: 15px auto;
+            }
+            
+            /* 移动端视频简介 */
+            .video-description h3 {
+                font-size: 1.1rem;
+            }
+            
+            .video-description p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航菜单切换功能
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // 增加容错处理：避免移动端以外访问时的报错
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    // 切换图标样式（汉堡/叉号）
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // 返回顶部功能增强
+            const backToTopButton = document.createElement('div');
+            backToTopButton.className = 'back-to-top hide';
+            backToTopButton.innerHTML = '<i class="bi bi-rocket-fill"></i>';
+            document.body.appendChild(backToTopButton);
+            
+            // 滚动事件监听
+            let lastScrollTop = 0;
+            const scrollThreshold = 200;
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > scrollThreshold && scrollTop > lastScrollTop) {
+                    backToTopButton.classList.remove('hide');
+                    backToTopButton.classList.add('show');
+                } else if (scrollTop <= scrollThreshold || scrollTop < lastScrollTop - 50) {
+                    backToTopButton.classList.remove('show');
+                    backToTopButton.classList.add('hide');
+                }
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+            
+            // 点击返回顶部
+            backToTopButton.addEventListener('click', function() {
+                const scrollToTop = () => {
+                    const position = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (position > 0) {
+                        window.requestAnimationFrame(scrollToTop);
+                        window.scrollTo(0, position - Math.max(20, position / 10));
+                    }
+                };
+                
+                scrollToTop();
+            });
+            
+            // 视频切换和简介显示功能
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoButtons = document.querySelectorAll('.video-btn');
+            const videoDescription = document.querySelector('.video-description');
+            const descriptionTitle = videoDescription.querySelector('h3');
+            const descriptionContent = videoDescription.querySelector('p');
+            
+            // 默认视频地址
+            const defaultVideoUrl = 'https://c1.rrcdnbf2.com/video/siduchishui/HD%E5%9B%BD%E8%AF%AD/index.m3u8';
+            
+            // 设置默认视频和简介
+            videoPlayer.src = defaultVideoUrl;
+            const defaultButton = document.querySelector(`.video-btn[data-video-url="${defaultVideoUrl}"]`);
+            if (defaultButton) {
+                defaultButton.classList.add('active');
+                // 显示默认视频简介
+                descriptionTitle.textContent = defaultButton.getAttribute('data-title');
+                descriptionContent.textContent = defaultButton.getAttribute('data-description');
+            }
+            
+            // 为每个视频按钮添加点击事件
+            videoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 获取按钮对应的视频链接、标题和简介
+                    const videoUrl = this.getAttribute('data-video-url');
+                    const title = this.getAttribute('data-title');
+                    const description = this.getAttribute('data-description');
+                    
+                    // 更新视频播放器
+                    videoPlayer.src = videoUrl;
+                    
+                    // 更新简介内容
+                    descriptionTitle.textContent = title;
+                    descriptionContent.textContent = description;
+                    
+                    // 添加过渡动画效果
+                    videoDescription.style.opacity = '0.5';
+                    setTimeout(() => {
+                        videoDescription.style.opacity = '1';
+                    }, 300);
+                    
+                    // 播放视频
+                    videoPlayer.play().catch(e => console.log('自动播放被浏览器阻止:', e));
+                    
+                    // 更新按钮状态 - 高亮当前选中的按钮
+                    videoButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+    <meta name="color-scheme" content="dark">
+</head>
+<body>
+    <!-- 导航菜单 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">
+<img src="/logo.png" width="250" height="50" alt="" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html"><i class="bi bi-browser-firefox"></i> 网站首页</a></li>
+                <li><a href="/blog.html"><i class="bi bi-reddit"></i> 个人博客</a></li>
+                <li><a href="/image.html"><i class="bi bi-card-image"></i> 图片画廊</a></li>
+                <li><a href="/mp3.html"><i class="bi bi-earbuds"></i> 音乐试听</a></li>
+                <li><a href="/video.html" class="active"><i class="bi bi-camera-reels"></i> 电影推荐</a></li>
+                <li><a href="/tool.html"><i class="bi bi-tools"></i> 在线工具</a></li>
+                <li><a href="/ly.html"><i class="bi bi-chat-dots"></i> 在线留言</a></li>
+                <li><a href="/ds.html"><i class="bi bi-cup-hot"></i> 赞助打赏</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="bi bi-filter-circle-fill"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 视频播放器区域 -->
+    <div class="container">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <!-- 内嵌视频播放器 -->
+                <iframe id="videoPlayer" 
+                        allowfullscreen 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                </iframe>
+            </div>
+            
+            <!-- 视频简介区域 -->
+            <div class="video-description">
+                <h3>推荐电影《四渡赤水》</h3>
+                <p>该片讲述了遵义会议后，毛泽东率红军来到赤水河畔，与川军相遇。毛主席、周副主席、刘伯承分析形势后，决定抢占渡口摆脱敌人。红军一渡赤水进入云南扎西，蒋介石命王道之调集大军围剿。红军研究敌情后，趁黔北空虚二渡赤水，夺取渡口，高翔奇袭娄山关，解放遵义。蒋介石闻讯后命重兵进攻，毛主席决定三渡赤水，随后又四渡赤水，将敌主力甩在身后。蒋介石急调滇军增援贵阳，红军将其牵到东面并打击。红军主力最终进入云南，渡过金沙江，踏上新征程的故事。</p>
+            </div>
+            
+            <!-- 视频链接按钮区域 - 四个按钮一行 -->
+            <div class="video-buttons">
+                <button class="video-btn" 
+                        data-video-url="https://y6fa.vhmzy.com/videos/202508/31/68b4086d6eb8b085069d9815/c740d2/index.m3u8"
+                        data-title="《志愿军：雄兵出击》"
+                        data-description="1950年，朝鲜南北两个政权发生内战，未过多久，美国宣布参战，并且趁机对我国东北部展开轰炸，还派出舰队封锁台湾海峡，以阻挠中华民族统一大业的完成。危急存亡之时，我方高层展开连番慎重的讨论和推演，并派出周总理前往莫斯科请求斯大林的支援。然而斯大林模棱两可，我方又处于建国之初，百废待兴的艰苦阶段。但是为了保家卫国，御敌于国门之外，毛主席毅然决然派出由彭德怀同志（王砚辉 饰）率领的人民志愿军入朝作战。">
+                    <i class="fa-solid fa-play"></i> 志愿军：雄兵出击
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/QeZvEwep/index.m3u8"
+                        data-title="《百团大战》"
+                        data-description="1940年4月9日，德国出兵占领丹麦，突然袭击挪威，击退英法远征军后，于6月10日占领挪威全境。5月10日德军入侵西欧，5月15日、28日，6月22日，荷兰、比利时、法国先后投降。英军退出欧洲大陆，英国本土受到入侵的严重威胁。欧洲战局刺激了日本迅速压服中国以利下一步争夺亚洲、太平洋地区霸权的欲望。5月10日，日本陆军省制定了《以昭和15、16年为目标的处理中国问题策略》，并在5月18日召开的陆军省、部首脑会议上正式通过。其要点是，在1940年底以前，进一步统一与加强政略、战略和谋略，以全力迅速迫使国民党蒋介石政权屈服。">
+                    <i class="fa-solid fa-play"></i> 百团大战
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/lejORYaj/index.m3u8"
+                        data-title="《辛亥革命》"
+                        data-description="19世纪末20世纪初，清王朝三百年江山气数将近，内忧外患，时局动荡，正是乱世之际，英雄辈出，中华民族面临着重大的历史变革。以孙中山（赵文瑄饰）为首的仁人志士意识到只有民主共和才能救中国，他们组成一个个革命政党，旨在推翻满清政府，建立人民当家作主的民主国家。在这一过程中，无数革命者流血牺牲，但是更多的革命家站出来与落后的封建体制作斗争，终于在武昌打响了辛亥革命的第一枪。">
+                    <i class="fa-solid fa-play"></i> 辛亥革命
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/yb8nglev/index.m3u8"
+                        data-title="《金陵十三钗》"
+                        data-description="1937年的南京，日军残暴，满目疮痍，但由国际友人主持的一个教堂暂时还是一方净土。几个神职人员收留了一群躲在教堂里的金陵女大学生、13个躲避战火的秦淮河上的风尘女子，以及6个从死人堆里爬出来的国军伤兵。共同面对有史以来最惨绝人寰的大屠杀的故事，结果竟然是那13个最下贱的女子成了保护众人的英雄。在这个相对封闭的空间里，他们共同面对有史以来最可怕、最没有人性的屠杀，产生了各种各样奇妙……">
+                    <i class="fa-solid fa-play"></i> 金陵十三钗
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/YaOgqGax/index.m3u8"
+                        data-title="《集结号》"
+                        data-description="1948年解放战争时期，连长谷子地（张涵予饰）率领九连47名战士在汶河岸执行掩护大部队撤退的任务，团长刘泽水（胡军饰）下令，以集结号为令，听见号响就撤退。惨烈的战争在炮弹的轰鸣中开始，九连的战士死伤惨重，排长焦大鹏（廖凡饰），牺牲前说自己听见了集结号，谷子地自己没有听见，他决定死守阵地。九连打退了敌人三次进攻，炸毁二辆坦克，歼敌无数，全连除连长谷子地，47人全部阵亡">
+                    <i class="fa-solid fa-play"></i> 集结号
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://m3u8.vhmzy.com/videos/202507/16/6877bcb16de0eb431f3c8b69/219159/index.m3u8"
+                        data-title="《浴血无名川》"
+                        data-description="影片讲述了抗美援朝战争时期，我国志愿军三排排长孟大关（任天野饰）临危受命，带领小队前去解救被困敌后的侦察排，经历了一系列艰难险阻，三排与“杜神枪”杜川（李东学饰）带领的侦察排成功汇合。为了避免大部队更大伤亡，孟大关与杜川在危急关头果断决定困死无法补充供给的敌方重炮营，一次次小规模战斗在这个无名水川暗暗展开……">
+                    <i class="fa-solid fa-play"></i> 浴血无名川
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/YaOg91Ga/index.m3u8"
+                        data-title="《南京！南京！》"
+                        data-description="1937年12月13日，时为国民政府首都的南京城沦陷，部分官员弃城逃亡，但仍有许多官兵留守，誓死保卫这个大厦将倾的城池。宋锡濂部军官陆剑雄（刘烨饰）协同战友与日军展开了激烈的巷战，他们微弱而顽强的抵抗最终被压制，数以万计的中国军民成为俘虏，在枪炮声中血染长江；金陵女子学院安全区，女教师姜淑云（高圆圆饰）奔波往复，尽力帮助和拯救所有来此避难的同胞，但兽性大发的日军早已虎视眈眈盯上了藏身于此的妇女；拉贝的秘书唐先生（范伟饰）小心应付，委曲求全，为了保护家人而做出错误的选择，他也为此付出代价；舞女小江（江一燕饰）纵使逃亡避难也不愿抛却女性的柔媚，她在关键时刻的选择则在其…………">
+                    <i class="fa-solid fa-play"></i> 南京！南京！
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/Rb4nm1eB/index.m3u8"
+                        data-title="《大决战之淮海战役》"
+                        data-description="1948年9—10月间，辽沈战役和济南战役相继胜利，标志着解放战争决定性转折点的到来。在此危急关头，蒋介石（赵恒多饰）紧急调配旗下三个兵团17万人的优势兵力固守中原，同年11月，华东野战军向黄百韬（许还山饰）兵团发动攻击，最大规模的淮海战役正式打响。地下党员何张防线的临场起义，为时间占下风的粟裕（谢伟才饰）赢得战机，顺利切断了黄百韬的退路。">
+                    <i class="fa-solid fa-play"></i> 大决战之淮海战役
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://p.b8bf.com/video/dajuezhanzhiliaoshenzhanyi/%E9%AB%98%E6%B8%85/index.m3u8"
+                        data-title="《大决战之辽沈战役》"
+                        data-description="1945年8月，日本帝国主义宣布投降，饱经战乱之苦的中华民族在短暂的胜利喜悦过后，即将迎来决定民族命运的重要时刻。随着蒋介石（赵恒多饰）撕毁停战协定，国共两党内战全面爆发。经过两年的正面对决，国共双方的差距逐渐缩小，战局终于迎来决定性的时刻。1948年初，毛泽东（古月饰）、周恩来、任弼时等共产党重要领导人离开陕北根据地，与刘少奇、朱德率领的中央工作委员会在河北会合。">
+                    <i class="fa-solid fa-play"></i> 大决战之辽沈战役
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://p.b8bf.com/video/dajuezhanzhipingjinzhanyi/%E9%AB%98%E6%B8%85/index.m3u8"
+                        data-title="《大决战之平津战役》"
+                        data-description="20世纪40年代末，古老的中华民族迎来了决定命运的重要时刻。国共两党的抗争进入攻坚阶段，辽沈战役和淮海战役后，蒋介石（赵恒多饰）受到极大触动，意图撤回华北六十万国军进入淮海，构筑一条坚固的江淮防线。在此危急关头，毛泽东主席（古月饰）在西柏坡发出指令，授意林彪（马绍信饰）率领东北野战军秘密跨越长城，会同聂荣臻的华北野战军发起平津战役，分割傅作义（李定保饰）军团以作各个歼灭。">
+                    <i class="fa-solid fa-play"></i> 大决战之平津战役
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/Yer22zWe/index.m3u8"
+                        data-title="《特级英雄黄继光》"
+                        data-description="影片以中、朝两国授予的抗美援朝特级英雄黄继光为原型，展示了黄继光如何参军并在军队中得到锻炼，不断提高自己的意志力和战场技巧，最终成为了一名优秀的战士。在上甘岭战役中，为了完成上级安排的任务，为了整个部队的胜利，面对着地堡中敌人的机枪，黄继光牺牲自己，英勇堵枪眼，为战友争取到了短暂的时间，从而消灭了敌人。">
+                    <i class="fa-solid fa-play"></i> 特级英雄黄继光
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/Rb48296b/index.m3u8"
+                        data-title="《鬼子来了》"
+                        data-description="第二次世界大战期间，中国河北挂甲台村的农民马大三（姜文饰）在日本人的统治下过着平静的生活。一个晚上，游击队绑架了日军陆军士兵花屋小三郎（香川照之饰）和翻译董汉臣，把他们捆绑塞入麻袋放在马大三家里，并吩咐马好好看管，几天后的大年三十来带人。马大三和村民战战兢兢地看守两人，花屋小三郎和董汉臣数次发出求救信号，皆被村民化解。半年过去了，村民们担心事情暴露，却又不敢把花屋等放了。">
+                    <i class="fa-solid fa-play"></i> 鬼子来了
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://m3u8.vhmzy.com/videos/202506/15/684eae54a4c55aa45f5ea6fc/dd8cg3/index.m3u8"
+                        data-title="《八佰》"
+                        data-description="1937年淞沪会战的最后一役，“八百壮士”奉命坚守上海四行仓库，以少敌多顽强抵抗四天四夜。电影《八佰》由管虎导演，是亚洲首部全片使用IMAX摄影机拍摄的商业电影，将于2020年8月21日全国影院上映。">
+                    <i class="fa-solid fa-play"></i> 八佰
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://hn.bfvvs.com/play/PdyrYx7e/index.m3u8"
+                        data-title="《智取威虎山》"
+                        data-description="1947年冬，为了从土匪手中夺取控制东北九岭上万先遣军的分布图，东北民主联军203小分队队长少剑波（林更新饰）委派侦查员杨子荣（张涵予饰）卧底潜入最大的土匪山头“威虎山”。杨子荣凭借自己的机智应变获得了匪首座山雕（梁家辉饰）和座下八大金刚的赏识，被封为威虎山“老九”。座山雕天生多疑，多次派人试探杨子荣，杨子荣一面与土匪多方周旋，一面涉险为山下战友传出情报。">
+                    <i class="fa-solid fa-play"></i> 智取威虎山
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://m3u8.vhmzy.com/videos/202505/14/68244177a4c55aa45f199df9/4f3543/index.m3u8"
+                        data-title="《长津湖之水门桥》"
+                        data-description="电影以抗美援朝战争第二次战役中的长津湖战役为背景，讲述了在结束了新兴里和下碣隅里的战斗之后，七连战士们又接到了更艰巨的任务……">
+                    <i class="fa-solid fa-play"></i> 长津湖之水门桥
+                </button>
+                <button class="video-btn" 
+                        data-video-url="https://m3u8.vhmzy.com/videos/202507/05/686941b655d6af430614f722/c1a667/index.m3u8"
+                        data-title="《金刚川》"
+                        data-description="1953年，抗美援朝战争进入最终阶段，志愿军在金城发动最后一场大型战役。为在指定时间到达，向金城前线投放更多战力，志愿军战士们在物资匮乏、武装悬殊的情况下，不断抵御敌机狂轰滥炸，以血肉之躯一次次修补战火中的木桥。一段鲜为人知的历史，在暗流涌动的金刚川上徐徐展开......">
+                    <i class="fa-solid fa-play"></i> 金刚川
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <p>© 2026 林熙导航网 版权所有</p>
+            <p>本站仅提供网址收录服务，所有内容均来自互联网，如有侵权请联系删除</p>
+        </div>
+    </footer>
+</body>
+</html>
