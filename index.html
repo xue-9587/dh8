@@ -15,16 +15,7 @@
  text-decoration: none;
  }
 
-    @font-face {
-    font-family: 'MyCustomFont';
-    src:url('/kl.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-* {
-    font-family: 'MyCustomFont', sans-serif;
-}
+    /* 已移除自定义字体 @font-face 调用，改用系统默认字体 */
     
         * {
             box-sizing: border-box;
@@ -506,7 +497,7 @@
                 <li><a href="/mp3.html"><i class="bi bi-earbuds"></i> 音乐试听</a></li>
                 <li><a href="/video.html"><i class="bi bi-camera-reels"></i> 电影推荐</a></li>
                 <li><a href="/tool.html"><i class="bi bi-tools"></i> 在线工具</a></li>
-                <li><a href="/ly.html"><i class="bi bi-chat-dots"></i> 在线留言</a></li>
+                <li><a href="/ly.html"><i class="bi bi-easel2"></i> 春晚直播</a></li>
                 <li><a href="/ds.html"><i class="bi bi-cup-hot"></i> 赞助打赏</a></li>
             </ul>
             <div class="menu-toggle">
@@ -514,6 +505,16 @@
             </div>
         </div>
     </nav>
+
+    <!-- 顶部快捷网址按钮（四个） -->
+    <div class="url-buttons" style="max-width:1600px;margin:20px auto 0;">
+        <div class="url-grid">
+            <a href="https://57dh.sylu.cc/" target="_blank" class="url-button"> <i class="bi bi-android2" style="color: #006400;"></i> app下载 </a>
+            <a href="https://57zy.sylu.cc/" target="_blank" class="url-button"><i class="bi bi-balloon-heart"></i> 影游编辑器</a>
+            <a href="" target="_blank" class="url-button"><i class="bi bi-balloon-heart"></i> 必应搜：林熙导航网</a>
+            <a href="" target="_blank" class="url-button"><i class="bi bi-balloon-heart"></i> QQ：1845637745</a>
+        </div>
+    </div>
 
     <!-- 文字广告栏 -->
     
@@ -620,6 +621,7 @@
         <div class="url-buttons">
             <div class="url-grid">
                 <a href="https://www.nivod.vip/" target="_blank" class="url-button"><i class="bi bi-badge-4k"></i> 泥视频</a>
+                <a href="https://www.gmy.cc/" target="_blank" class="url-button"><i class="bi bi-badge-4k"></i> 剧迷TV</a>
                 <a href="https://www.netflixgc.com/" target="_blank" class="url-button"><i class="bi bi-badge-4k"></i> 奈飞工厂</a>
                 <a href="https://www.dalvdm.cc/" target="_blank" class="url-button"><i class="bi bi-badge-4k"></i> 打驴动漫</a>
                 <a href="https://www.ayfox.com/" target="_blank" class="url-button"><i class="bi bi-badge-4k"></i> 爱壹帆</a>
@@ -682,5 +684,20 @@
             <p><a href="/icp" target="_blank"><i class="bi bi-browser-firefox" style="color: #a79552;"></i> 萌ICP备10000000号-1</a></p>
         </div>
     </footer>
+
+    <!-- 网址按钮：点击先进入独立倒计时跳转页，3 秒后自动跳转目标站 -->
+    <script>
+        document.querySelectorAll('.url-button').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var href = btn.getAttribute('href');
+                if (href && /^https?:\/\//i.test(href)) {
+                    window.open('tz.html?to=' + encodeURIComponent(href), '_blank');
+                } else {
+                    window.location.href = href;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
